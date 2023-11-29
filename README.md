@@ -54,6 +54,10 @@ The flag `lora_target_modules` support `q_proj`, `v_proj`, `k_proj`, `o_proj`.
 
 You can use `--resume_from_checkpoint ${path_to_lora_checkpoint}` to load your trained lora.
 
+
+## Server
+We provide `server_lora.py` to run your model on your server, and `client.py` to communicate with the server in interactive mode.
+
 ## Author
 - [Huawei Lin](https://huaweilin.net/)
 

@@ -18,14 +18,14 @@ total_batch_size=$(( gradient_accumulation_steps * world_size * batch_size ))
 
 run_name="e${num_epoch}_llama2_7b_qvko_r${lora_r}_a${lora_alpha}_lr${learning_rate}_bs${total_batch_size}"
 
-DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
-echo "Dir: ${DIR}"
+work_dir="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
+echo "dir: ${work_dir}"
 
 torchrun --nproc_per_node=${world_size} --master_port=${master_port} train.py \
     --model_name_or_path meta-llama/Llama-2-7b-hf \
     --data_path ./alpaca_data.json \
-    --output_dir ${DIR}/${run_name}/ \
-    --run_name  ${run_name}\
+    --output_dir ${work_dir}/${run_name}/ \
+    --run_name  ${run_name} \
     --bf16 True \
     --num_train_epochs ${num_epoch} \
     --per_device_train_batch_size ${batch_size} \

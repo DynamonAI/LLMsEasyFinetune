@@ -10,7 +10,7 @@ lora_alpha=$(( lora_r * 2 ))
 learning_rate="5e-5"
 num_epoch=10
 batch_size=16
-world_size=2
+world_size=1
 
 total_batch_size=128
 gradient_accumulation_steps=$(( total_batch_size / world_size / batch_size))

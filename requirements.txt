@@ -11,3 +11,8 @@ git+https://github.com/huggingface/transformers.git
 sentencepiece
 gradio
 scipy
+numpy
+rouge_score
+openai==0.27.4
+tokenizers>=0.13.3
+wandb

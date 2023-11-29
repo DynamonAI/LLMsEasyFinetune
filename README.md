@@ -11,8 +11,10 @@ For more information about Alpaca amd LLaMA, please read the original documents.
 
 ## Quick Start
 
-Install the requirements.
+Create a new env and install the requirements.
 ```
+conda create -n alpaca python=3.10
+conda activate alpaca
 pip install -r requirements.txt
 ```
 We recommend using `wandb` to monitor the training status.

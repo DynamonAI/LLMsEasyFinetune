@@ -1,4 +1,4 @@
-# Stanford Alpaca: An Instruction-following LLaMA Model
+# Alpaca Finetuning
 
 This repo is an unofficial implementation for Stanford's Alpaca models that support full-parameter finetune, LoRA and QLoRA, based on [standford_alpaca](https://github.com/tatsu-lab/stanford_alpaca), [alpaca-lora](https://github.com/tloen/alpaca-lora).
 
@@ -44,9 +44,13 @@ torchrun --nproc_per_node=1 --master_port=27312 train.py \
     --lora_target_modules q_proj v_proj k_proj o_proj
 ```
 We also support `--load_in_8bit True`
+
 You can also use LoRA without quantize by ignoring the flag `load_in_4bit` and `load_in_8bit`.
+
 If you want to do full-parameter finetuning, you can disable `use_lora` or ignore it.
+
 The flag `lora_target_modules` support `q_proj`, `v_proj`, `k_proj`, `o_proj`.
+
 
 You can use `--resume_from_checkpoint ${path_to_lora_checkpoint}` to load your trained lora.
 

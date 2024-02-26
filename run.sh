@@ -10,13 +10,13 @@ lora_alpha=$(( lora_r * 2 ))
 learning_rate="5e-5"
 num_epoch=10
 batch_size=16
-world_size=1
+world_size=1 # Change it to the number of GPUs
 
 total_batch_size=128
 gradient_accumulation_steps=$(( total_batch_size / world_size / batch_size))
 total_batch_size=$(( gradient_accumulation_steps * world_size * batch_size ))
 
-run_name="e${num_epoch}_llama2_7b_qvko_r${lora_r}_a${lora_alpha}_lr${learning_rate}_bs${total_batch_size}"
+run_name="e${num_epoch}_gemma_7b_qvko_r${lora_r}_a${lora_alpha}_lr${learning_rate}_bs${total_batch_size}"
 
 work_dir="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
 echo "dir: ${work_dir}"

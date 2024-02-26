@@ -77,10 +77,11 @@ torchrun --nproc_per_node=1 --master_port=27312 train.py \
 ```
 
 ## Server & Client
+We are going to provide a script for deploying your own model on server.
 Still working in progress.
 
 
-## Reference:
+## References
 [0]: [Alpaca: A Strong, Replicable Instruction-Following Model](https://crfm.stanford.edu/2023/03/13/alpaca.html)
 
 [1]: [LLaMA: Open and Efficient Foundation Language Models](https://arxiv.org/abs/2302.13971v1)

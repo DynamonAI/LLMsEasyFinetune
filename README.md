@@ -1,8 +1,6 @@
 # LLMsEasyFinetune
 
-This repo is an easy-to-run implementation for finetuning large language models (LLMs) like llama and gemma, supporting full parameter finetuning, LoRA, and QLoRA.
-
-
+This repo is an easy-to-run implementation for finetuning large language models (LLMs) such as llama and gemma, supporting full parameter finetuning, LoRA, and QLoRA.
 
 ## Quick Start
 
@@ -13,6 +11,8 @@ conda activate LLMsEasyFinetune
 pip install -r requirements.txt
 ```
 We recommend using `wandb` to monitor the training status.
+
+We provide a [52K alpaca dataset](https://github.com/tatsu-lab/stanford_alpaca/tree/main) in `./data` for model finetuning.
 
 - **Finetuning `llama-2-7b` with QLoRA**
 

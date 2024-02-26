@@ -46,13 +46,13 @@ We also support `--load_in_8bit True`
 
 You can also use LoRA without quantization by ignoring the flag `load_in_4bit` and `load_in_8bit`.
 
-If you want to do full-parameter finetuning, you can disable `use_lora` or ignore it.
-
 The flag `lora_target_modules` supports `q_proj`, `v_proj`, `k_proj`, `o_proj`.
 
 You can use `--resume_from_checkpoint ${path_to_lora_checkpoint}` to load your trained lora.
 
 - **Full-parameter Finetuning `gemma-7b`**
+
+If you want to do full-parameter finetuning, you can disable `use_lora` or ignore it.
 ```
 torchrun --nproc_per_node=1 --master_port=27312 train.py \
     --model_name_or_path google/gemma-7b \

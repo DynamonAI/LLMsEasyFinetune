@@ -75,7 +75,7 @@ torchrun --nproc_per_node=1 --master_port=27312 train.py \
 ```
 
 ## Server & Client
-Still work in progress.
+Still working in progress.
 
 
 ## Reference:

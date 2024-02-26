@@ -15,7 +15,9 @@ pip install -r requirements.txt
 We recommend using `wandb` to monitor the training status.
 
 - **Finetuning `llama-2-7b` with QLoRA**
+
 The `run.sh` is a simple example for finetuning `llama-2-7b` with QLoRA.
+
 You can also change the model to `google/gemma-7b`.
 ```
 torchrun --nproc_per_node=1 --master_port=27312 train.py \

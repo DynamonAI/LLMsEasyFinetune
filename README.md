@@ -76,7 +76,7 @@ torchrun --nproc_per_node=1 --master_port=27312 train.py \
     --ddp_find_unused_parameters False
 ```
 
-- **Full-parameter Finetuning `gemma-7b` with FSDP Offload**
+- **Full-parameter Finetuning `llama-2-7b` with FSDP Offload**
 
 When GPU Memory is insufficient, you can enable the CPU offloading for FSDP.
   

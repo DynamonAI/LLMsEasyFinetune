@@ -76,6 +76,33 @@ torchrun --nproc_per_node=1 --master_port=27312 train.py \
     --ddp_find_unused_parameters False
 ```
 
+- **Full-parameter Finetuning `gemma-7b` with FSDP Offload**
+
+When GPU Memory is insufficient, you can enable the CPU offloading for FSDP.
+  
+```
+torchrun --nproc_per_node=1 --master_port=27312 train.py \
+    --model_name_or_path meta-llama/Llama-2-7b-hf \
+    --data_path ./data/alpaca_data.json \
+    --output_dir ./example_output_dir \
+    --run_name  example_output \
+    --bf16 True \
+    --num_train_epochs 5 \
+    --per_device_train_batch_size 16 \
+    --gradient_accumulation_steps 8 \
+    --warmup_steps 300 \
+    --save_strategy "epoch" \
+    --lr_scheduler_type "constant_with_warmup" \
+    --save_total_limit 10 \
+    --learning_rate 5e-5 \
+    --model_max_length 512 \
+    --logging_steps 8 \
+    --tf32 True \
+    --ddp_find_unused_parameters False \
+    --fsdp "full_shard auto_wrap offload" \
+    --fsdp_transformer_layer_cls_to_wrap 'LlamaDecoderLayer'
+```
+
 ## Server & Client
 We are going to provide a script for deploying your own model on server.
 Still working in progress.

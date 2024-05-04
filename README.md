@@ -104,8 +104,20 @@ torchrun --nproc_per_node=1 --master_port=27312 train.py \
 ```
 
 ## Server & Client
-We are going to provide a script for deploying your own model on server.
-Still working in progress.
+You can use `example/server.py` to deploy your model on your server, and use `example/client.py` for inference. Deploying the model on a server and using a client for inference can save a lot of time on loading the model for multiple prompts.
+
+Start by running the server script in `examples` with the following command:
+```bash
+CUDA_VISIBLE_DEVICES=0 python server.py \
+    --model_name_or_path meta-llama/Llama-2-7b-hf \
+    --adapter_path /path/to/your/lora/adapter \
+    --load_in_4bit True
+```
+The `adapter_path` and `load_in_4bit` can be ignored if you want to deploy the base model.
+
+After model deploying, you can perform inference by executing `python client.py`.
+
+You can also customize the system prompt or chat history in the script.
 
 
 ## References

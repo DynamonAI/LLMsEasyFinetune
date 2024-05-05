@@ -123,12 +123,11 @@ You can also customize the system prompt or chat history in the script.
 ## Web UI
 Demo: https://llmseasyfinetune-web.streamlit.app
 
-We provide a very simple web UI in `example/web_client.py` as shown in following screenshot:
-<p align="center" width="100%">
-<img src="assets/web_example.png" alt="web example" style="width: 50%; min-width: 300px; display: block; margin: auto;">
-</p>
+We provide a very simple web UI in `example/web_client.py` as shown in following screenshot:!
+![](assets/web_example.png)
 
 Streamlit is need for web UI: `pip install streamlit`.
+
 Then execute `streamlit run web_client.py`.
 
 

@@ -114,7 +114,6 @@ class ModelHandler:
 #         if torch.__version__ >= "2":
 #             model = torch.compile(model)
 
-
         return model, tokenizer
 
     def encode(self, instruction):
@@ -122,7 +121,9 @@ class ModelHandler:
         print(instruction)
         print(f"-----  instruction  -----\n{instruction}\n--------------------\n")
         inputs = self.tokenizer(instruction, return_tensors="pt")
-        return inputs.input_ids.cuda()
+        if torch.cuda.is_available():
+            return inputs.input_ids.cuda()
+        return inputs.input_ids
 
     def decode(self, generate_ids):
         result = self.tokenizer.batch_decode(generate_ids, skip_special_tokens=True, clean_up_tokenization_spaces=False)[0]

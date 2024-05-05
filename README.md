@@ -1,4 +1,7 @@
+
 # LLMsEasyFinetune
+[![Code License](https://img.shields.io/badge/Code%20License-Apache_2.0-green.svg)](https://github.com/huawei-lin/LLMsEasyFinetune/blob/master/LICENSE)
+[![Python 3.9+](https://img.shields.io/badge/python-3.9+-blue.svg)](https://www.python.org/downloads/release/python-390/)
 
 This repo is an easy-to-run implementation for finetuning large language models (LLMs) such as llama and gemma, supporting full parameter finetuning, LoRA, and QLoRA.
 
@@ -123,10 +126,10 @@ You can also customize the system prompt or chat history in the script.
 ## Web UI
 Demo: https://llmseasyfinetune-web.streamlit.app
 
-We provide a very simple web UI in `example/web_client.py` as shown in following screenshot:!
+We provide a very simple web UI in `example/web_client.py` as shown in following screenshot:
 ![](assets/web_example.png)
 
-Streamlit is need for web UI: `pip install streamlit`.
+Streamlit is needed for web UI: `pip install streamlit`.
 
 Then execute `streamlit run web_client.py`.
 

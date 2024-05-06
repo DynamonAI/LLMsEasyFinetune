@@ -133,7 +133,7 @@ Streamlit is needed for web UI: `pip install streamlit`.
 
 Then execute `streamlit run web_client.py`.
 
-The strealim might use `8501` port, you can forward the port of the server to your local by "ssh ${your_server} -L 8501:localhost:8501".
+The strealim might use `8501` port, you can forward the port of the server to your local by `ssh ${your_server} -L 8501:localhost:8501`.
 
 
 
